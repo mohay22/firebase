@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Existing TextViews for displaying user data -->
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:textSize="18sp" />
+
+    <!-- New EditText for user to type their notes -->
+    <EditText
+        android:id="@+id/etUserText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type something..."
+        android:inputType="textMultiLine"
+        android:minHeight="200dp"
+        android:gravity="top|start"
+        android:padding="16dp" />
+
+    <!-- Button to save the text to the Firestore database -->
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Text"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>
