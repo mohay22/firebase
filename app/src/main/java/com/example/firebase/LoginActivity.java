@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
 
-            // Firebase authentication code to sign in user
+            // authentication code to sign in user
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()) {
@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(intent);
                             finish(); // Close Login Activity
                         } else {
-                            // Show error message if login fails
+                            // am Showing error message if login fails
                             Toast.makeText(LoginActivity.this, "Login failed! Please check your credentials.", Toast.LENGTH_SHORT).show();
                         }
                     });

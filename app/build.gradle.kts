@@ -47,7 +47,9 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore:24.0.0")
     implementation("com.google.firebase:firebase-analytics")
 
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    // Test dependencies
+    testImplementation(libs.junit)  // For unit tests
+    androidTestImplementation(libs.ext.junit)  // For Android Instrumentation tests
+    androidTestImplementation(libs.espresso.core)  // For UI testing with Espresso
 }
+
