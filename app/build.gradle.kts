@@ -31,8 +31,15 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-}
 
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
+        unitTests.all {
+            it.useJUnitPlatform() // This is needed if you're using JUnit5 tests
+        }
+    }
+
+}
 dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -42,14 +49,17 @@ dependencies {
     // Firebase dependencies
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.auth)
-    implementation(platform("com.google.firebase:firebase-bom:33.8.0")) // Firebase BOM for dependency version management
+    implementation(platform("com.google.firebase:firebase-bom:33.8.0"))
     implementation("com.google.firebase:firebase-auth:23.1.0")
     implementation("com.google.firebase:firebase-firestore:24.0.0")
     implementation("com.google.firebase:firebase-analytics")
 
-    // Test dependencies
-    testImplementation(libs.junit)  // For unit tests
-    androidTestImplementation(libs.ext.junit)  // For Android Instrumentation tests
-    androidTestImplementation(libs.espresso.core)  // For UI testing with Espresso
+    // JUnit 5 dependency (JUnit Platform)
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.2")
+
+    // Android Testing dependencies
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
 }
 
